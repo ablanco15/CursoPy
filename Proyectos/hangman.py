@@ -15,6 +15,40 @@ def word_to_choose():
     while(" " in word_choosen or "_" in word_choosen):
         word_choosen = random.choice(words)
     return word_choosen.upper()
+def draw(body):
+    if(body == "head"):
+        print("_")
+        print(" |")
+        print(" o")
+    elif(body == "body"):  
+        print("_")
+        print(" |")
+        print(" o")
+        print(" | ")
+    elif(body == "righ_arm"):
+        print("_")
+        print(" |")
+        print(" o")
+        print(" |\ ")
+    elif(body == "left_arm"):
+        print("_")
+        print(" |")
+        print(" o")
+        print("/|\ ")
+    elif(body == "righ_leg"):
+        print("_")
+        print(" |")
+        print(" o")
+        print("/|\ ")
+        print("  \ ")
+    elif(body == "left_leg"):
+        print("_")
+        print(" |")
+        print(" o")
+        print("/|\ ")
+        print("/ \ ")     
+
+
 
 def play():
     global word_choosen
@@ -58,6 +92,7 @@ def play():
         used_letters.add(letter)
         print()
         print("now your "+body[0] +" is hanging")
+        draw(body[0])
         if( body[0] == "righ_leg"):
             print()
             print("Choose carefully, you are about to die ")
@@ -65,7 +100,7 @@ def play():
 
         body.remove(body[0])
         print()
-        print()
+
     
 word_choosen = word_to_choose()
 spaces = "_"*len(word_choosen)
@@ -78,4 +113,13 @@ while( (spaces != word_choosen) and ( len(body) != 0 ) ):
 if( spaces == word_choosen ):
     print("Congrats!!! the word was "+spaces+", You make it, and you'll keep living")
 else:
-    print("You've been hanged, We are so sorry, try in your next life")
+    print("You've been hanged, we are so sorry, try in your next life, your word was "+ word_choosen)
+    print()
+    print("_")
+    print(" |")
+    print(" o")
+    print("/|\ ")    
+    print("/ \ ")
+    print()
+    print()
+    print()
